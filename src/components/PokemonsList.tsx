@@ -40,7 +40,15 @@ const PokemonsList = () => {
         setLoading(false);
       });
   }, []);
-  return <div>pokemonsList</div>;
+  return (
+    <section>
+      <ul>
+        {data?.map((pokemon) => (
+          <li>{pokemon.name}</li>
+        ))}
+      </ul>
+    </section>
+  );
 };
 
 export default PokemonsList;
