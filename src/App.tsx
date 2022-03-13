@@ -6,7 +6,6 @@ function App() {
 
   return (
     <div>
-      {passPokemonUrl}
       <PokemonsList passPokemonUrl={passPokemonUrl} />
       <ChosenPokemon pokemonUrl={pokemonUrl} />
     </div>

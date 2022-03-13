@@ -1,5 +1,8 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
+
+import { v4 as uuidv4 } from 'uuid';
+
 interface IData {
   count: number;
   next?: string;
@@ -27,7 +30,6 @@ const PokemonsList: FC<Props> = ({ passPokemonUrl }) => {
     axios
       .get<IData>('https://pokeapi.co/api/v2/pokemon?limit=151')
       .then((response) => {
-        console.log(response.data);
         setData(response.data.results);
       })
       .catch((ex) => {
@@ -47,7 +49,9 @@ const PokemonsList: FC<Props> = ({ passPokemonUrl }) => {
     <section>
       <ul>
         {data?.map(({ name, url }) => (
-          <li onClick={() => passPokemonUrl(url)}>{name}</li>
+          <li key={uuidv4()} onClick={() => passPokemonUrl(url)}>
+            {name}
+          </li>
         ))}
       </ul>
     </section>
