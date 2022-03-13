@@ -19,4 +19,11 @@ export default App;
 
 const ChoosePokemonWrapper = styled.div`
   display: flex;
+  height: 100vh;
+  > section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;

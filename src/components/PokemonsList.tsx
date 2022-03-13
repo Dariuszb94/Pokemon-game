@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -47,15 +48,29 @@ const PokemonsList: FC<Props> = ({ passPokemonUrl }) => {
   }, []);
   return (
     <section>
-      <ul>
+      <List>
         {data?.map(({ name, url }) => (
-          <li key={uuidv4()} onClick={() => passPokemonUrl(url)}>
-            {name}
-          </li>
+          <ListElement key={uuidv4()} onClick={() => passPokemonUrl(url)}>
+            <ListedPokemon>{name}</ListedPokemon>
+          </ListElement>
         ))}
-      </ul>
+      </List>
     </section>
   );
 };
 
 export default PokemonsList;
+
+const List = styled.ul`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 70%;
+  overflow: scroll;
+`;
+const ListElement = styled.li`
+  padding: 4px 0;
+`;
+const ListedPokemon = styled.span`
+  text-transform: capitalize;
+`;

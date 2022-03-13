@@ -12,8 +12,6 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
 
   const [error, setError]: [string, (error: string) => void] = useState('');
 
-  // const [data, setData] = useState<TPokemon[]>([]);
-
   useEffect(() => {
     if (pokemonUrl.length) {
       axios
@@ -44,11 +42,11 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
     }
   }, [pokemonUrl]);
   return (
-    <div>
+    <section>
       {name}
       <br />
       <img src={sprite} alt={name} />
-    </div>
+    </section>
   );
 };
 
