@@ -9,21 +9,30 @@ function App() {
 
   return (
     <ChoosePokemonWrapper>
-      <PokemonsList passPokemonUrl={passPokemonUrl} />
-      <ChosenPokemon pokemonUrl={pokemonUrl} />
+      <Header>Choose your fighter!</Header>
+      <ChoosePokemon>
+        <PokemonsList passPokemonUrl={passPokemonUrl} />
+        <ChosenPokemon pokemonUrl={pokemonUrl} />
+      </ChoosePokemon>
     </ChoosePokemonWrapper>
   );
 }
 
 export default App;
 
-const ChoosePokemonWrapper = styled.div`
+const ChoosePokemon = styled.div`
   display: flex;
-  height: 100vh;
+  height: calc(100% - 100px);
   > section {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+`;
+const ChoosePokemonWrapper = styled.div`
+  height: 100vh;
+`;
+const Header = styled.h1`
+  text-align: center;
 `;
