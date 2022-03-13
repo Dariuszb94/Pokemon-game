@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 interface IData {
   count: number;
   next?: string;
@@ -11,7 +11,10 @@ type TPokemon = {
   name: string;
   url: string;
 };
-const PokemonsList = () => {
+interface Props {
+  passPokemonUrl: React.Dispatch<React.SetStateAction<string>>;
+}
+const PokemonsList: FC<Props> = ({ passPokemonUrl }) => {
   const [loading, setLoading]: [boolean, (loading: boolean) => void] =
     React.useState<boolean>(true);
 
@@ -43,8 +46,8 @@ const PokemonsList = () => {
   return (
     <section>
       <ul>
-        {data?.map((pokemon) => (
-          <li>{pokemon.name}</li>
+        {data?.map(({ name, url }) => (
+          <li onClick={() => passPokemonUrl(url)}>{name}</li>
         ))}
       </ul>
     </section>
