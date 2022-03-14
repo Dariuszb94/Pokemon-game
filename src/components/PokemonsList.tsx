@@ -69,7 +69,12 @@ const List = styled.ul`
   overflow: scroll;
 `;
 const ListElement = styled.li`
-  padding: 4px 0;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  &:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 `;
 const ListedPokemon = styled.span`
   text-transform: capitalize;
