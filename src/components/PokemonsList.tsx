@@ -66,6 +66,7 @@ const List = styled.ul`
   margin: 0;
   padding: 0;
   max-height: 70%;
+  min-width: 200px;
   overflow: scroll;
   box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
   border-radius: 4px;
@@ -77,6 +78,7 @@ const ListElement = styled.li`
   border-radius: 4px;
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 36px;
   transition: height 0.4s linear;
   &:nth-child(even) {
