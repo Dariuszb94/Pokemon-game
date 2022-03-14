@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -67,13 +67,26 @@ const List = styled.ul`
   padding: 0;
   max-height: 70%;
   overflow: scroll;
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  border-radius: 4px;
 `;
+
 const ListElement = styled.li`
-  padding: 8px;
+  padding: 0 8px;
   cursor: pointer;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  transition: height 0.4s linear;
   &:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.1);
+  }
+  &:hover span {
+    font-weight: bold;
+  }
+  &:hover {
+    height: 72px;
   }
 `;
 const ListedPokemon = styled.span`
