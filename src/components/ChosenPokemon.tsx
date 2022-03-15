@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
+import styled from 'styled-components';
 interface Props {
   pokemonUrl: string;
 }
@@ -22,6 +23,7 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
             name,
             sprites: { front_default },
           } = data;
+          console.log(data);
           setName(name);
           setSprite(front_default);
 
@@ -42,12 +44,20 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
     }
   }, [pokemonUrl]);
   return (
-    <section>
-      {name}
-      <br />
-      <img src={sprite} alt={name} />
-    </section>
+    <ChosenPokemonWrapper>
+      <PokemonName>{name}</PokemonName>
+      <img src={sprite} alt={name} width={200} height={200} />
+    </ChosenPokemonWrapper>
   );
 };
 
 export default ChosenPokemon;
+
+const PokemonName = styled.h2`
+  text-transform: capitalize;
+`;
+
+const ChosenPokemonWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+`;
