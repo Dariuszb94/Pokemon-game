@@ -66,16 +66,13 @@ const PokemonName = styled.h2`
   animation-timing-function: linear;
   @keyframes slide-down {
     0% {
-      transform: translateY(-120px);
-    }
-    60% {
-      transform: translateY(40px) rotate(-10deg);
+      transform: scale(0.9);
     }
     80% {
-      transform: translateY(-30px) rotate(8deg);
+      transform: scale(1.1);
     }
     100% {
-      transform: translateY(0);
+      transform: scale(1);
     }
   }
 `;
