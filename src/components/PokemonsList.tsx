@@ -81,12 +81,12 @@ const ListElement = styled.li`
   transition: height 0.4s linear;
   &:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.1);
-    animation-name: slideRight;
+    animation-name: slide-right;
     animation-duration: 1s;
     animation-timing-function: linear;
   }
   &:nth-child(odd) {
-    animation-name: slideLeft;
+    animation-name: slide-left;
     animation-duration: 1s;
     animation-timing-function: linear;
   }
@@ -97,7 +97,7 @@ const ListElement = styled.li`
     height: 72px;
   }
 
-  @keyframes slideRight {
+  @keyframes slide-right {
     0% {
       transform: translateX(100px);
       opacity: 0;
@@ -109,7 +109,7 @@ const ListElement = styled.li`
     }
   }
 
-  @keyframes slideLeft {
+  @keyframes slide-left {
     0% {
       transform: translateX(-100px);
       opacity: 0;

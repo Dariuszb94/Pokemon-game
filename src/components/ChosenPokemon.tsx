@@ -58,6 +58,23 @@ export default ChosenPokemon;
 
 const PokemonName = styled.h2`
   text-transform: capitalize;
+  animation-name: slide-down;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-120px);
+    }
+    60% {
+      transform: translateY(40px) rotate(-10deg);
+    }
+    80% {
+      transform: translateY(-30px) rotate(8deg);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 `;
 
 const ChosenPokemonWrapper = styled.section`
@@ -66,14 +83,14 @@ const ChosenPokemonWrapper = styled.section`
 `;
 const PokemonSprite = styled.img`
   animation-name: popup;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
   animation-timing-function: linear;
   @keyframes popup {
     0% {
       transform: scale(0.1);
     }
     80% {
-      transform: scale(1.2);
+      transform: scale(1.3);
     }
 
     100% {
