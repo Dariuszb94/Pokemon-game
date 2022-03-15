@@ -5,8 +5,11 @@ interface Props {
   pokemonUrl: string;
 }
 const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
-  const [sprite, setSprite] = useState('');
-  const [name, setName]: [string, (error: string) => void] = useState('');
+  const [sprite, setSprite] = useState(
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
+  );
+  const [name, setName]: [string, (error: string) => void] =
+    useState('Bulbasaur');
 
   const [loading, setLoading]: [boolean, (loading: boolean) => void] =
     useState<boolean>(true);
