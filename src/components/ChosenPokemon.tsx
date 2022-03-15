@@ -43,10 +43,13 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
         });
     }
   }, [pokemonUrl]);
+  useEffect(() => {
+    console.log(pokemonUrl);
+  }, [pokemonUrl]);
   return (
-    <ChosenPokemonWrapper>
+    <ChosenPokemonWrapper key={pokemonUrl}>
       <PokemonName>{name}</PokemonName>
-      <img src={sprite} alt={name} width={200} height={200} />
+      <PokemonSprite src={sprite} alt={name} width={200} height={200} />
     </ChosenPokemonWrapper>
   );
 };
@@ -60,4 +63,21 @@ const PokemonName = styled.h2`
 const ChosenPokemonWrapper = styled.section`
   display: flex;
   flex-direction: column;
+`;
+const PokemonSprite = styled.img`
+  animation-name: popup;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  @keyframes popup {
+    0% {
+      transform: scale(0.1);
+    }
+    80% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
 `;

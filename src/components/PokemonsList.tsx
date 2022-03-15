@@ -2,8 +2,6 @@ import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import { v4 as uuidv4 } from 'uuid';
-
 interface IData {
   count: number;
   next?: string;
@@ -50,7 +48,7 @@ const PokemonsList: FC<Props> = ({ passPokemonUrl }) => {
     <section>
       <List>
         {data?.map(({ name, url }) => (
-          <ListElement key={uuidv4()} onClick={() => passPokemonUrl(url)}>
+          <ListElement key={name} onClick={() => passPokemonUrl(url)}>
             <ListedPokemon>{name}</ListedPokemon>
           </ListElement>
         ))}
@@ -83,12 +81,44 @@ const ListElement = styled.li`
   transition: height 0.4s linear;
   &:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.1);
+    animation-name: slideRight;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+  }
+  &:nth-child(odd) {
+    animation-name: slideLeft;
+    animation-duration: 1s;
+    animation-timing-function: linear;
   }
   &:hover span {
     font-weight: bold;
   }
   &:hover {
     height: 72px;
+  }
+
+  @keyframes slideRight {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 `;
 const ListedPokemon = styled.span`
