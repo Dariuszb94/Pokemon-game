@@ -11,9 +11,6 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
   const [name, setName]: [string, (error: string) => void] =
     useState('Bulbasaur');
 
-  const [loading, setLoading]: [boolean, (loading: boolean) => void] =
-    useState<boolean>(true);
-
   const [error, setError]: [string, (error: string) => void] = useState('');
 
   useEffect(() => {
@@ -26,11 +23,8 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
             name,
             sprites: { front_default },
           } = data;
-          console.log(data);
           setName(name);
           setSprite(front_default);
-
-          // setData(response.data.results);
         })
         .catch((ex) => {
           let error = axios.isCancel(ex)
@@ -42,15 +36,13 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
             : 'An unexpected error has occurred';
 
           setError(error);
-          setLoading(false);
         });
     }
   }, [pokemonUrl]);
-  useEffect(() => {
-    console.log(pokemonUrl);
-  }, [pokemonUrl]);
+
   return (
     <ChosenPokemonWrapper key={pokemonUrl}>
+      {error && <ErrorMessage>There is an error</ErrorMessage>}
       <PokemonName>{name}</PokemonName>
       <PokemonSprite src={sprite} alt={name} width={200} height={200} />
     </ChosenPokemonWrapper>
@@ -75,6 +67,9 @@ const PokemonName = styled.h2`
       transform: scale(1);
     }
   }
+`;
+export const ErrorMessage = styled.div`
+  color: red;
 `;
 
 const ChosenPokemonWrapper = styled.section`

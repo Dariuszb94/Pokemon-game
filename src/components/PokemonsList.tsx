@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { ErrorMessage } from './ChosenPokemon';
 
 interface IData {
   count: number;
@@ -17,9 +18,6 @@ interface Props {
   passPokemonUrl: React.Dispatch<React.SetStateAction<string>>;
 }
 const PokemonsList: FC<Props> = ({ passPokemonUrl }) => {
-  const [loading, setLoading]: [boolean, (loading: boolean) => void] =
-    React.useState<boolean>(true);
-
   const [error, setError]: [string, (error: string) => void] =
     React.useState('');
 
@@ -41,11 +39,11 @@ const PokemonsList: FC<Props> = ({ passPokemonUrl }) => {
           : 'An unexpected error has occurred';
 
         setError(error);
-        setLoading(false);
       });
   }, []);
   return (
     <section>
+      {error && <ErrorMessage>There is an error</ErrorMessage>}
       <List>
         {data?.map(({ name, url }) => (
           <ListElement key={name} onClick={() => passPokemonUrl(url)}>
