@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import ChosenPokemon from './ChoosenPokemon/ChosenPokemon';
-import PokemonsList from './PokemonList/PokemonsList';
+import ChosenPokemon from './GameStartComponents/ChoosenPokemon/ChosenPokemon';
+import PokemonsList from './GameStartComponents/PokemonList/PokemonsList';
+import { ChoosePokemon, ChoosePokemonWrapper, Header } from './GameStartStyles';
 
 const GameStart = () => {
   const [pokemonUrl, passPokemonUrl] = useState('');
@@ -18,20 +18,3 @@ const GameStart = () => {
 };
 
 export default GameStart;
-
-const ChoosePokemon = styled.div`
-  display: flex;
-  height: calc(100% - 100px);
-  > section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-const ChoosePokemonWrapper = styled.div`
-  height: 100vh;
-`;
-const Header = styled.h1`
-  text-align: center;
-`;
