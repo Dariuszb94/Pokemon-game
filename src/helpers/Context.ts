@@ -1,11 +1,12 @@
-import { createContext } from 'react';
+import { createContext, Dispatch, SetStateAction } from 'react';
 
-export const PokemonUrlContext = createContext({
-  pokemonUrl: '',
-  setPokemonUrl: (_value: string) => {},
-});
-
-export type GlobalContent = {
-  pokemonUrl: string;
-  setPokemonUrl: React.Dispatch<React.SetStateAction<string>>;
+export type TPokemonData = {
+  name: string;
 };
+export type TPokemonDataContext = {
+  pokemonData: TPokemonData;
+  setPokemonData: Dispatch<SetStateAction<TPokemonData>>;
+};
+export const PokemonDataContext = createContext<TPokemonDataContext | null>(
+  null
+);

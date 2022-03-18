@@ -6,12 +6,12 @@ import {
   PokemonName,
   PokemonSprite,
 } from './ChosenPokemonStyles';
-import { PokemonUrlContext } from '../../../../helpers/Context';
+import { PokemonDataContext } from '../../../../helpers/Context';
 
 interface Props {
   pokemonUrl: string;
 }
-const ChosenPokemon: FC<Props> = () => {
+const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
   const [sprite, setSprite] = useState(
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
   );
@@ -19,7 +19,7 @@ const ChosenPokemon: FC<Props> = () => {
     useState('Bulbasaur');
   const [error, setError]: [string, (error: string) => void] = useState('');
 
-  const { pokemonUrl } = useContext(PokemonUrlContext);
+  const pokemonDataContext = useContext(PokemonDataContext);
 
   useEffect(() => {
     if (pokemonUrl.length) {
@@ -33,6 +33,7 @@ const ChosenPokemon: FC<Props> = () => {
           } = data;
           setName(name);
           setSprite(front_default);
+          setPokemonData(data);
         })
         .catch((ex) => {
           let error = axios.isCancel(ex)
@@ -48,10 +49,14 @@ const ChosenPokemon: FC<Props> = () => {
     }
   }, [pokemonUrl]);
 
+  if (!pokemonDataContext) return null;
+  const { pokemonData, setPokemonData } = pokemonDataContext;
+
   return (
     <ChosenPokemonWrapper key={pokemonUrl}>
       {error && <ErrorMessage>There is an error</ErrorMessage>}
-      <PokemonName>{name}</PokemonName>
+      {console.log(pokemonData)}
+      <PokemonName>{pokemonData.name}</PokemonName>
       <PokemonSprite src={sprite} alt={name} width={200} height={200} />
     </ChosenPokemonWrapper>
   );

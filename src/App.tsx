@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import Fight from './components/Fight/Fight';
 import GameStart from './components/GameStart/GameStart';
-import { PokemonUrlContext } from './helpers/Context';
+import { PokemonDataContext, TPokemonData } from './helpers/Context';
 function App() {
   const [start, setStart] = useState(false);
-  const [pokemonUrl, setPokemonUrl] = useState('');
+  const [pokemonData, setPokemonData] = useState<TPokemonData>({
+    name: 'Bulbasaur',
+  });
 
   return (
-    <PokemonUrlContext.Provider value={{ pokemonUrl, setPokemonUrl }}>
+    <PokemonDataContext.Provider value={{ pokemonData, setPokemonData }}>
       {!start ? <GameStart setStart={setStart} /> : <Fight />}
-    </PokemonUrlContext.Provider>
+    </PokemonDataContext.Provider>
   );
 }
 
