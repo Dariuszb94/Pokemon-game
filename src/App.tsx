@@ -1,11 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import GameStart from './components/GameStart/GameStart';
 
 function App() {
+  const [start, setStart] = useState(false);
+
   return (
     <>
-      <GameStart />
+      <GameStart setStart={setStart} />
     </>
   );
 }

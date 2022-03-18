@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import ChosenPokemon from './GameStartComponents/ChoosenPokemon/ChosenPokemon';
 import PokemonsList from './GameStartComponents/PokemonList/PokemonsList';
 import {
@@ -8,7 +8,10 @@ import {
   Header,
 } from './GameStartStyles';
 
-const GameStart = () => {
+interface Props {
+  setStart: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const GameStart: FC<Props> = ({ setStart }) => {
   const [pokemonUrl, passPokemonUrl] = useState('');
 
   return (
@@ -18,7 +21,7 @@ const GameStart = () => {
         <PokemonsList passPokemonUrl={passPokemonUrl} />
         <ChosenPokemon pokemonUrl={pokemonUrl} />
       </ChoosePokemon>
-      <Button>Fight!</Button>
+      <Button onClick={() => setStart(true)}>Fight!</Button>
     </ChoosePokemonWrapper>
   );
 };
