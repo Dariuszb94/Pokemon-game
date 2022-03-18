@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
+import { ErrorMessage } from '../../shared/SharedUI';
 import {
   ChosenPokemonWrapper,
-  ErrorMessage,
   PokemonName,
   PokemonSprite,
 } from './ChosenPokemonStyles';

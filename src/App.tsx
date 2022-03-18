@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ChosenPokemon from './components/ChoosenPokemon/ChosenPokemon';
-import PokemonsList from './components/PokemonsList';
+import PokemonsList from './components/PokemonList/PokemonsList';
 
 import styled from 'styled-components';
 
