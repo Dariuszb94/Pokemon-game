@@ -12,13 +12,13 @@ interface Props {
   setStart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const GameStart: FC<Props> = ({ setStart }) => {
-  const [pokemonUrl, passPokemonUrl] = useState('');
+  const [pokemonUrl, setPokemonUrl] = useState('');
 
   return (
     <ChoosePokemonWrapper>
       <Header>Choose your fighter!</Header>
       <ChoosePokemon>
-        <PokemonsList passPokemonUrl={passPokemonUrl} />
+        <PokemonsList setPokemonUrl={setPokemonUrl} />
         <ChosenPokemon pokemonUrl={pokemonUrl} />
       </ChoosePokemon>
       <Button onClick={() => setStart(true)}>Fight!</Button>

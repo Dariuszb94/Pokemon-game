@@ -15,9 +15,9 @@ type TPokemon = {
   url: string;
 };
 interface Props {
-  passPokemonUrl: React.Dispatch<React.SetStateAction<string>>;
+  setPokemonUrl: React.Dispatch<React.SetStateAction<string>>;
 }
-const PokemonsList: FC<Props> = ({ passPokemonUrl }) => {
+const PokemonsList: FC<Props> = ({ setPokemonUrl }) => {
   const [error, setError]: [string, (error: string) => void] =
     React.useState('');
 
@@ -46,7 +46,7 @@ const PokemonsList: FC<Props> = ({ passPokemonUrl }) => {
       {error && <ErrorMessage>There is an error</ErrorMessage>}
       <List>
         {data?.map(({ name, url }) => (
-          <ListElement key={name} onClick={() => passPokemonUrl(url)}>
+          <ListElement key={name} onClick={() => setPokemonUrl(url)}>
             <ListedPokemon>{name}</ListedPokemon>
           </ListElement>
         ))}
