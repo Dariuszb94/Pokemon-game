@@ -19,7 +19,7 @@ const ChosenPokemon: FC<Props> = () => {
     useState('Bulbasaur');
   const [error, setError]: [string, (error: string) => void] = useState('');
 
-  const { pokemonUrl, setPokemonUrl } = useContext(PokemonUrlContext);
+  const { pokemonUrl } = useContext(PokemonUrlContext);
 
   useEffect(() => {
     if (pokemonUrl.length) {

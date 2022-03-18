@@ -22,7 +22,7 @@ const PokemonsList: FC<Props> = () => {
     React.useState('');
   const [data, setData] = useState<TPokemon[]>([]);
 
-  const { pokemonUrl, setPokemonUrl } = useContext(PokemonUrlContext);
+  const { setPokemonUrl } = useContext(PokemonUrlContext);
   useEffect(() => {
     axios
       .get<IData>('https://pokeapi.co/api/v2/pokemon?limit=151')
