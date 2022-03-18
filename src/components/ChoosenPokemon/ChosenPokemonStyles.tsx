@@ -17,9 +17,6 @@ export const PokemonName = styled.h2`
     }
   }
 `;
-export const ErrorMessage = styled.div`
-  color: red;
-`;
 
 export const ChosenPokemonWrapper = styled.section`
   display: flex;
