@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ChosenPokemon from './components/ChosenPokemon';
+import ChosenPokemon from './components/ChoosenPokemon/ChosenPokemon';
 import PokemonsList from './components/PokemonsList';
 
 import styled from 'styled-components';

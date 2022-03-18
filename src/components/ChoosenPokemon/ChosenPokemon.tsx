@@ -1,6 +1,11 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
-import styled from 'styled-components';
+import {
+  ChosenPokemonWrapper,
+  ErrorMessage,
+  PokemonName,
+  PokemonSprite,
+} from './ChosenPokemonStyles';
 interface Props {
   pokemonUrl: string;
 }
@@ -50,46 +55,3 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
 };
 
 export default ChosenPokemon;
-
-const PokemonName = styled.h2`
-  text-transform: capitalize;
-  animation-name: slide-down;
-  animation-duration: 0.8s;
-  animation-timing-function: linear;
-  @keyframes slide-down {
-    0% {
-      transform: scale(0.9);
-    }
-    80% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-`;
-export const ErrorMessage = styled.div`
-  color: red;
-`;
-
-const ChosenPokemonWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-`;
-const PokemonSprite = styled.img`
-  animation-name: popup;
-  animation-duration: 0.8s;
-  animation-timing-function: linear;
-  @keyframes popup {
-    0% {
-      transform: scale(0.1);
-    }
-    80% {
-      transform: scale(1.3);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-`;

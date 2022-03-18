@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { ErrorMessage } from './ChosenPokemon';
+import { ErrorMessage } from './ChoosenPokemon/ChosenPokemonStyles';
 
 interface IData {
   count: number;
