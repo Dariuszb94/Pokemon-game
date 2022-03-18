@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import { ErrorMessage } from '../../../../shared/SharedUI';
 import { List, ListElement, ListedPokemon } from './PokemonListStyles';
-
+import { PokemonUrlContext } from '../../../../helpers/Context';
 interface IData {
   count: number;
   next?: string;
@@ -17,12 +17,12 @@ type TPokemon = {
 interface Props {
   setPokemonUrl: React.Dispatch<React.SetStateAction<string>>;
 }
-const PokemonsList: FC<Props> = ({ setPokemonUrl }) => {
+const PokemonsList: FC<Props> = () => {
   const [error, setError]: [string, (error: string) => void] =
     React.useState('');
-
   const [data, setData] = useState<TPokemon[]>([]);
 
+  const { pokemonUrl, setPokemonUrl } = useContext(PokemonUrlContext);
   useEffect(() => {
     axios
       .get<IData>('https://pokeapi.co/api/v2/pokemon?limit=151')

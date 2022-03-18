@@ -1,22 +1,25 @@
 import axios from 'axios';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import { ErrorMessage } from '../../../../shared/SharedUI';
 import {
   ChosenPokemonWrapper,
   PokemonName,
   PokemonSprite,
 } from './ChosenPokemonStyles';
+import { PokemonUrlContext } from '../../../../helpers/Context';
+
 interface Props {
   pokemonUrl: string;
 }
-const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
+const ChosenPokemon: FC<Props> = () => {
   const [sprite, setSprite] = useState(
     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
   );
   const [name, setName]: [string, (error: string) => void] =
     useState('Bulbasaur');
-
   const [error, setError]: [string, (error: string) => void] = useState('');
+
+  const { pokemonUrl, setPokemonUrl } = useContext(PokemonUrlContext);
 
   useEffect(() => {
     if (pokemonUrl.length) {
