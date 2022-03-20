@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { FC, useContext, useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { ErrorMessage } from '../../../../shared/SharedUI';
 import { List, ListElement, ListedPokemon } from './PokemonListStyles';
 interface IData {
