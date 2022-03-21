@@ -33,6 +33,7 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
           } = data;
           setName(name);
           setSprite(front_default);
+          console.log(data);
           setPokemonData(data);
         })
         .catch((ex) => {
@@ -55,7 +56,6 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
   return (
     <ChosenPokemonWrapper key={pokemonUrl}>
       {error && <ErrorMessage>There is an error</ErrorMessage>}
-      {console.log(pokemonData)}
       <PokemonName>{pokemonData.name}</PokemonName>
       <PokemonSprite src={sprite} alt={name} width={200} height={200} />
     </ChosenPokemonWrapper>

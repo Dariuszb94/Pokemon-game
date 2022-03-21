@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
-// import { PokemonUrlContext } from '../../helpers/Context';
-// const { pokemonUrl } = useContext(PokemonUrlContext);
+import { PokemonDataContext } from '../../helpers/Context';
 
 const Fight = () => {
-  return <div>Fight</div>;
+  const pokemonDataContext = useContext(PokemonDataContext);
+
+  if (!pokemonDataContext) return null;
+  const { pokemonData } = pokemonDataContext;
+  return <div>Fight{console.log(pokemonData)}</div>;
 };
 
 export default Fight;
