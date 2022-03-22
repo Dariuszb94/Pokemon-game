@@ -84,12 +84,17 @@ export const defaultPokemonData = {
     },
   ],
 };
+export type TMove = {
+  move: {
+    name: string;
+  };
+};
 export type TPokemonData = {
   name: string;
   sprites: {
     front_default: string;
   };
-  moves: object[];
+  moves: TMove[];
 };
 export type TPokemonDataContext = {
   pokemonData: TPokemonData;
