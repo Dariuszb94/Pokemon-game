@@ -87,6 +87,7 @@ export const defaultPokemonData = {
 export type TMove = {
   move: {
     name: string;
+    url: string;
   };
 };
 export type TPokemonData = {
