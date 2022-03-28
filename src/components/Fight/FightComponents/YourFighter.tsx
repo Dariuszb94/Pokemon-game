@@ -56,7 +56,7 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
       {movesToUse.map(({ name, power }) => (
         <>
           <MoveName>{name}</MoveName>
-          <div>{power}</div>
+          <span>{power}</span>
         </>
       ))}
     </div>
