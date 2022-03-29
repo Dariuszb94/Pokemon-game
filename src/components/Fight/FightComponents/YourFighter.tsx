@@ -52,7 +52,7 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
   return (
     <div>
       <PokemonName>{name}</PokemonName>
-      <PokemonSprite src={sprite} alt={name} width={200} height={200} />
+      <PokemonSprite src={sprite} alt={name} width={220} height={220} />
       {movesToUse.map(({ name, power }) => (
         <>
           <MoveName>{name}</MoveName>
