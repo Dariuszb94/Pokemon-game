@@ -50,7 +50,7 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
       });
   }, [moves, movesToUse]);
   return (
-    <div>
+    <section>
       <PokemonName>{name}</PokemonName>
       <PokemonSprite src={sprite} alt={name} width={220} height={220} />
       {movesToUse.map(({ name, power }) => (
@@ -59,6 +59,6 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
           <span>{power}</span>
         </>
       ))}
-    </div>
+    </section>
   );
 };
