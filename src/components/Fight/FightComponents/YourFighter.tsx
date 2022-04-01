@@ -51,6 +51,7 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
   }, [moves, movesToUse]);
   return (
     <section>
+      {error && error}
       <PokemonName>{name}</PokemonName>
       <PokemonSprite src={sprite} alt={name} width={220} height={220} />
       {movesToUse.map(({ name, power }) => (
