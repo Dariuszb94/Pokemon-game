@@ -37,7 +37,7 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
             : ex.code === 'ECONNABORTED'
             ? 'A timeout has occurred'
             : ex.response.status === 404
-            ? 'Resource Not Found'
+            ? 'Not Found'
             : 'An unexpected error has occurred';
           setError(error);
         });
