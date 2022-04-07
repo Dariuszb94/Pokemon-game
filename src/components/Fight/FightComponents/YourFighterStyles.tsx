@@ -6,3 +6,6 @@ export const PokemonName = styled.h2`
 export const MoveName = styled.div`
   text-transform: capitalize;
 `;
+export const MoveBox = styled.div`
+  text-transform: capitalize;
+`;
