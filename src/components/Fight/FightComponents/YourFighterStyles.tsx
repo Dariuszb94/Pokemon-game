@@ -8,4 +8,5 @@ export const MoveName = styled.div`
 `;
 export const MoveBox = styled.div`
   text-transform: capitalize;
+  display: flex;
 `;
