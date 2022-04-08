@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { FC, useEffect, useState } from 'react';
 import { TMove } from '../../../helpers/Context';
 import { PokemonSprite } from '../../GameStart/GameStartComponents/ChoosenPokemon/ChosenPokemonStyles';
-import { PokemonName, MoveName } from './YourFighterStyles';
+import { PokemonName, MoveName, MovePool } from './YourFighterStyles';
 
 interface Props {
   name: string;
@@ -55,10 +55,10 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
       <PokemonName>{name}</PokemonName>
       <PokemonSprite src={sprite} alt={name} width={220} height={220} />
       {movesToUse.map(({ name, power }) => (
-        <section>
+        <MovePool>
           <MoveName>{name}</MoveName>
           <span>{power}</span>
-        </section>
+        </MovePool>
       ))}
     </section>
   );
