@@ -13,8 +13,11 @@ export const MoveBox = styled.div`
 export const MovePool = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8px;
 `;
 export const Move = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  border-radius: 4px;
 `;
