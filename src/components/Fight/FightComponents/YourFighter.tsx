@@ -60,12 +60,15 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
       <PokemonName>{name}</PokemonName>
       <PokemonSprite src={sprite} alt={name} width={220} height={220} />
       <MovePool>
-        {movesToUse.map(({ name, power }) => (
-          <Move>
-            <MoveName>{name}</MoveName>
-            <span>({power})</span>
-          </Move>
-        ))}
+        {movesToUse
+          .filter(({ power }) => power)
+          .slice(0, 4)
+          .map(({ name, power }) => (
+            <Move>
+              <MoveName>{name}</MoveName>
+              <span>({power})</span>
+            </Move>
+          ))}
       </MovePool>
     </YourFighterBox>
   );
