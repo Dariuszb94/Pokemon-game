@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const PokemonName = styled.h2`
   text-transform: capitalize;
+  text-align: center;
 `;
 export const MoveName = styled.div`
   text-transform: capitalize;
@@ -24,4 +25,9 @@ export const Move = styled.button`
   justify-content: center;
   outline: none;
   border: none;
+`;
+export const YourFighterBox = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
