@@ -25,6 +25,7 @@ export const Move = styled.button`
   justify-content: center;
   outline: none;
   border: none;
+  cursor: pointer;
 `;
 export const YourFighterBox = styled.section`
   display: flex;
