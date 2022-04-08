@@ -14,3 +14,7 @@ export const MovePool = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 `;
+export const Move = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+`;
