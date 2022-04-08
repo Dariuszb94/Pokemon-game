@@ -15,9 +15,13 @@ export const MovePool = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 8px;
 `;
-export const Move = styled.div`
+export const Move = styled.button`
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.1);
-  padding: 8px;
+  padding: 16px;
   border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  outline: none;
+  border: none;
 `;
