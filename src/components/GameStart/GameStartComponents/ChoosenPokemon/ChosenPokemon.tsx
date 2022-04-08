@@ -33,6 +33,7 @@ const ChosenPokemon: FC<Props> = ({ pokemonUrl }) => {
           } = data;
           setName(name);
           setSprite(front_default);
+          console.log(data);
           setPokemonData(data);
         })
         .catch((ex) => {
