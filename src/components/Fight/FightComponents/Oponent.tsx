@@ -26,7 +26,7 @@ export const Oponent: FC<Props> = () => {
     },
     {
       name: 'Water gun',
-      power: 30,
+      power: 40,
     },
   ];
   return (
