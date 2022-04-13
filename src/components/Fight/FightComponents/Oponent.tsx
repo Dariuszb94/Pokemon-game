@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { TMove } from '../../../helpers/Context';
 import { PokemonSprite } from '../../GameStart/GameStartComponents/ChoosenPokemon/ChosenPokemonStyles';
 import { PokemonName, YourFighterBox } from './YourFighterStyles';
