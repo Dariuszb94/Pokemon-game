@@ -21,7 +21,7 @@ export const Oponent: FC<Props> = () => {
     },
     {
       name: 'Body slam',
-      power: 50,
+      power: 45,
     },
     {
       name: 'Water gun',
