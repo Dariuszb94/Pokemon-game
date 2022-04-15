@@ -20,7 +20,12 @@ interface IMove {
   name: string;
   power: string;
 }
-export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
+export const YourFighter: FC<Props> = ({
+  name,
+  sprite,
+  moves,
+  setOponentHP,
+}) => {
   const [error, setError]: [string, (error: string) => void] = useState('');
   const [movesToUse, setMovesToUse] = useState<IMove[]>([]);
 
@@ -66,7 +71,7 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
           .filter(({ power }) => power)
           .slice(0, 4)
           .map(({ name, power }) => (
-            <Move>
+            <Move onClick={() => setOponentHP(Number(power))}>
               <MoveName>{name}</MoveName>
               <span>({power})</span>
             </Move>
