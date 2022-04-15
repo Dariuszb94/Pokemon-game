@@ -22,6 +22,7 @@ interface IMove {
 export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
   const [error, setError]: [string, (error: string) => void] = useState('');
   const [movesToUse, setMovesToUse] = useState<IMove[]>([]);
+  const [hp, setHp] = useState(100);
 
   const getMove = (url: string) => {
     if (url) {
@@ -58,6 +59,7 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
   return (
     <YourFighterBox>
       <PokemonName>{name}</PokemonName>
+      HP: {hp}
       <PokemonSprite src={sprite} alt={name} width={220} height={220} />
       <MovePool>
         {movesToUse
