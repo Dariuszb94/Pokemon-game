@@ -8,10 +8,10 @@ interface Props {
   sprite: string;
   moves: TMove[];
   setYourHP: React.Dispatch<React.SetStateAction<number>>;
-  atackOponent: number;
+  attackOponent: number;
 }
 
-export const Oponent: FC<Props> = ({ setYourHP, atackOponent }) => {
+export const Oponent: FC<Props> = ({ setYourHP, attackOponent }) => {
   const [HP, setHP] = useState(100);
   const moves = [
     {
@@ -31,10 +31,11 @@ export const Oponent: FC<Props> = ({ setYourHP, atackOponent }) => {
       power: 40,
     },
   ];
-  useEffect(() => {}, [atackOponent]);
+  useEffect(() => {}, [attackOponent]);
   return (
     <YourFighterBox>
       <PokemonName>Rattata</PokemonName>
+      {HP}
       <PokemonSprite
         src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png'
         alt='Rattata'
