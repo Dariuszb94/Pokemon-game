@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { TMove } from '../../../helpers/Context';
 import { PokemonSprite } from '../../GameStart/GameStartComponents/ChoosenPokemon/ChosenPokemonStyles';
 import { PokemonName, YourFighterBox } from './YourFighterStyles';
@@ -11,7 +11,8 @@ interface Props {
   atackOponent: number;
 }
 
-export const Oponent: FC<Props> = ({ setYourHP }) => {
+export const Oponent: FC<Props> = ({ setYourHP, atackOponent }) => {
+  const [HP, setHP] = useState(100);
   const moves = [
     {
       name: 'Cut',
@@ -30,6 +31,7 @@ export const Oponent: FC<Props> = ({ setYourHP }) => {
       power: 40,
     },
   ];
+  useEffect(() => {}, [atackOponent]);
   return (
     <YourFighterBox>
       <PokemonName>Rattata</PokemonName>

@@ -6,7 +6,7 @@ import { YourFighter } from './FightComponents/YourFighter';
 const Fight = () => {
   const pokemonDataContext = useContext(PokemonDataContext);
   const [yourHP, setYourHP] = useState(100);
-  const [atackOponent, setAttackOponent] = useState(100);
+  const [attackOponent, setAttackOponent] = useState(100);
 
   if (!pokemonDataContext) return null;
   const { pokemonData } = pokemonDataContext;
@@ -23,7 +23,7 @@ const Fight = () => {
         sprite={pokemonData.sprites.front_default}
         moves={pokemonData.moves}
         setYourHP={setYourHP}
-        atackOponent={atackOponent}
+        attackOponent={attackOponent}
       />
     </div>
   );
