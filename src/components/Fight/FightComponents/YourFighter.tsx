@@ -58,7 +58,7 @@ export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
   return (
     <YourFighterBox>
       <PokemonName>{name}</PokemonName>
-      HP: {hp}
+      {/* HP: {hp} */}
       <PokemonSprite src={sprite} alt={name} width={220} height={220} />
       <MovePool>
         {movesToUse

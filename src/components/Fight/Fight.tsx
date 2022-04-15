@@ -21,6 +21,7 @@ const Fight = () => {
         name={pokemonData.name}
         sprite={pokemonData.sprites.front_default}
         moves={pokemonData.moves}
+        setYourHP={setYourHP}
       />
     </div>
   );
