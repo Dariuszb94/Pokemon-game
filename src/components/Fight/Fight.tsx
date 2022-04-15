@@ -16,6 +16,7 @@ const Fight = () => {
         name={pokemonData.name}
         sprite={pokemonData.sprites.front_default}
         moves={pokemonData.moves}
+        setOponentHP={setOponentHP}
       />
       <Oponent
         name={pokemonData.name}

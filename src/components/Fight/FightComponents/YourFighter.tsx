@@ -14,6 +14,7 @@ interface Props {
   name: string;
   sprite: string;
   moves: TMove[];
+  setOponentHP: React.Dispatch<React.SetStateAction<number>>;
 }
 interface IMove {
   name: string;
