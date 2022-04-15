@@ -22,7 +22,6 @@ interface IMove {
 export const YourFighter: FC<Props> = ({ name, sprite, moves }) => {
   const [error, setError]: [string, (error: string) => void] = useState('');
   const [movesToUse, setMovesToUse] = useState<IMove[]>([]);
-  const [hp, setHp] = useState(100);
 
   const getMove = (url: string) => {
     if (url) {
