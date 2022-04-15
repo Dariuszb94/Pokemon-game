@@ -35,8 +35,8 @@ export const Oponent: FC<Props> = ({ setYourHP }) => {
       <PokemonSprite
         src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png'
         alt='Rattata'
-        width={200}
-        height={200}
+        width={220}
+        height={220}
       />
     </YourFighterBox>
   );
