@@ -14,7 +14,7 @@ interface Props {
   name: string;
   sprite: string;
   moves: TMove[];
-  setOponentHP: React.Dispatch<React.SetStateAction<number>>;
+  setAttackOponent: React.Dispatch<React.SetStateAction<number>>;
 }
 interface IMove {
   name: string;
@@ -24,7 +24,7 @@ export const YourFighter: FC<Props> = ({
   name,
   sprite,
   moves,
-  setOponentHP,
+  setAttackOponent,
 }) => {
   const [error, setError]: [string, (error: string) => void] = useState('');
   const [movesToUse, setMovesToUse] = useState<IMove[]>([]);
@@ -71,7 +71,7 @@ export const YourFighter: FC<Props> = ({
           .filter(({ power }) => power)
           .slice(0, 4)
           .map(({ name, power }) => (
-            <Move onClick={() => setOponentHP(Number(power))}>
+            <Move onClick={() => setAttackOponent(Number(power))}>
               <MoveName>{name}</MoveName>
               <span>({power})</span>
             </Move>
