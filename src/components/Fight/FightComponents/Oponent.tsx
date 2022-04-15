@@ -31,7 +31,9 @@ export const Oponent: FC<Props> = ({ setYourHP, attackOponent }) => {
       power: 40,
     },
   ];
-  useEffect(() => {}, [attackOponent]);
+  useEffect(() => {
+    setHP((prev) => prev - attackOponent);
+  }, [attackOponent]);
   return (
     <YourFighterBox>
       <PokemonName>Rattata</PokemonName>
