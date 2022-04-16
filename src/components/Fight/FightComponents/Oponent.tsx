@@ -37,7 +37,7 @@ export const Oponent: FC<Props> = ({ setYourHP, attackOponent }) => {
   return (
     <YourFighterBox>
       <PokemonName>Rattata</PokemonName>
-      {HP}
+      HP: {HP}
       <PokemonSprite
         src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png'
         alt='Rattata'
