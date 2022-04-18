@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const Oponent: FC<Props> = ({ setYourHP, attackOponent }) => {
-  const [HP, setHP] = useState(100);
+  const [HP, setHP] = useState(90);
   const moves = [
     {
       name: 'Cut',
