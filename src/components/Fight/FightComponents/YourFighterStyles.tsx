@@ -18,7 +18,7 @@ export const MovePool = styled.div`
 `;
 export const Move = styled.button`
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 16px;
   border-radius: 4px;
   display: flex;
