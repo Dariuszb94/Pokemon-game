@@ -5,7 +5,9 @@ import { YourFighter } from './FightComponents/YourFighter';
 
 const Fight = () => {
   const pokemonDataContext = useContext(PokemonDataContext);
-  const [yourHP, setYourHP] = useState(100);
+  const [yourFighterHP, setYourFighterHP] = useState(100);
+  const [oponentHP, setOponentHP] = useState(100);
+
   const [attack, setAttack] = useState({ power: 0, attacker: '' });
   useEffect(() => {
     console.log(attack);
@@ -19,12 +21,13 @@ const Fight = () => {
         sprite={pokemonData.sprites.front_default}
         moves={pokemonData.moves}
         setAttack={setAttack}
+        yourFighterHP={yourFighterHP}
       />
       <Oponent
         name={pokemonData.name}
         sprite={pokemonData.sprites.front_default}
         moves={pokemonData.moves}
-        setYourHP={setYourHP}
+        oponentHP={oponentHP}
         setAttack={setAttack}
       />
     </div>

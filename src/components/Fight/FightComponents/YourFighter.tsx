@@ -14,6 +14,7 @@ interface Props {
   name: string;
   sprite: string;
   moves: TMove[];
+  yourFighterHP: number;
   setAttack: React.Dispatch<
     React.SetStateAction<{
       power: number;
@@ -25,7 +26,13 @@ interface IMove {
   name: string;
   power: string;
 }
-export const YourFighter: FC<Props> = ({ name, sprite, moves, setAttack }) => {
+export const YourFighter: FC<Props> = ({
+  name,
+  sprite,
+  moves,
+  setAttack,
+  yourFighterHP,
+}) => {
   const [error, setError]: [string, (error: string) => void] = useState('');
   const [movesToUse, setMovesToUse] = useState<IMove[]>([]);
 

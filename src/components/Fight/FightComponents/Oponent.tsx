@@ -7,7 +7,7 @@ interface Props {
   name: string;
   sprite: string;
   moves: TMove[];
-  setYourHP: React.Dispatch<React.SetStateAction<number>>;
+  oponentHP: number;
   setAttack: React.Dispatch<
     React.SetStateAction<{
       power: number;
@@ -16,7 +16,7 @@ interface Props {
   >;
 }
 
-export const Oponent: FC<Props> = ({ setYourHP, setAttack }) => {
+export const Oponent: FC<Props> = ({ oponentHP, setAttack }) => {
   const [HP, setHP] = useState(90);
   const moves = [
     {
