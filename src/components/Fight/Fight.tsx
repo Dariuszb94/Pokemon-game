@@ -10,11 +10,17 @@ const Fight = () => {
 
   const [attack, setAttack] = useState({ power: 0, attacker: '' });
   useEffect(() => {
-    if (attack.attacker === 'YourFighter')
-      setOponentHP((prev) => prev - attack.power);
+    if (attack.attacker === 'YourFighter') {
+      oponentHP > attack.power
+        ? setOponentHP((prev) => prev - attack.power)
+        : setOponentHP(0);
+    }
 
-    if (attack.attacker === 'Oponent')
-      setYourFighterHP((prev) => prev - attack.power);
+    if (attack.attacker === 'Oponent') {
+      yourFighterHP > attack.power
+        ? setYourFighterHP((prev) => prev - attack.power)
+        : setYourFighterHP(0);
+    }
   }, [attack]);
   if (!pokemonDataContext) return null;
   const { pokemonData } = pokemonDataContext;
