@@ -10,7 +10,8 @@ const Fight = () => {
 
   const [attack, setAttack] = useState({ power: 0, attacker: '' });
   useEffect(() => {
-    console.log(attack);
+    if (attack.attacker === 'YourFighter')
+      setOponentHP((prev) => prev - attack.power);
   }, [attack]);
   if (!pokemonDataContext) return null;
   const { pokemonData } = pokemonDataContext;
