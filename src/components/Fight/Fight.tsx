@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { PokemonDataContext } from '../../helpers/Context';
 import { Oponent } from './FightComponents/Oponent';
 import { YourFighter } from './FightComponents/YourFighter';
@@ -6,8 +6,10 @@ import { YourFighter } from './FightComponents/YourFighter';
 const Fight = () => {
   const pokemonDataContext = useContext(PokemonDataContext);
   const [yourHP, setYourHP] = useState(100);
-  const [attack, setAttack] = useState(100);
-
+  const [attack, setAttack] = useState({ power: 80, attacker: 'YourFighter' });
+  useEffect(() => {
+    console.log(attack);
+  }, [attack]);
   if (!pokemonDataContext) return null;
   const { pokemonData } = pokemonDataContext;
   return (
