@@ -39,7 +39,7 @@ export const Oponent: FC<Props> = ({ oponentHP, setAttack }) => {
   useEffect(() => {
     if (oponentHP === 100) return;
     setAttack({
-      power: 25,
+      power: 20,
       attacker: 'Oponent',
     });
   }, [oponentHP, setAttack]);
