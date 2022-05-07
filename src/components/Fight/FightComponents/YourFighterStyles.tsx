@@ -23,6 +23,7 @@ export const Move = styled.button`
   border-radius: 4px;
   display: flex;
   justify-content: center;
+  outline: none;
   border: none;
   cursor: pointer;
 `;
