@@ -21,6 +21,7 @@ const Fight = () => {
         ? setYourFighterHP((prev) => prev - attack.power)
         : setYourFighterHP(0);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [attack]);
   if (!pokemonDataContext) return null;
   const { pokemonData } = pokemonDataContext;
