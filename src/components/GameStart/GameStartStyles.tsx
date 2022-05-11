@@ -15,7 +15,7 @@ export const ChoosePokemonWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-export const Header = styled.h2`
+export const Header = styled.h1`
   text-align: center;
 `;
 export const Button = styled.button`
