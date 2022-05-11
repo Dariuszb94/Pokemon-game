@@ -24,6 +24,7 @@ const Fight = () => {
   }, [attack]);
   if (!pokemonDataContext) return null;
   const { pokemonData } = pokemonDataContext;
+
   return (
     <div>
       <YourFighter
