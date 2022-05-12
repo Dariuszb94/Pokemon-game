@@ -23,6 +23,7 @@ const Fight = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [attack]);
+  
   if (!pokemonDataContext) return null;
   const { pokemonData } = pokemonDataContext;
 
