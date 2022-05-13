@@ -5,7 +5,7 @@ import { YourFighter } from './FightComponents/YourFighter';
 
 const Fight = () => {
   const pokemonDataContext = useContext(PokemonDataContext);
-  const [yourFighterHP, setYourFighterHP] = useState(100);
+  const [yourFighterHP, setYourFighterHP] = useState(200);
   const [oponentHP, setOponentHP] = useState(100);
 
   const [attack, setAttack] = useState({ power: 0, attacker: '' });
@@ -23,7 +23,7 @@ const Fight = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [attack]);
-  
+
   if (!pokemonDataContext) return null;
   const { pokemonData } = pokemonDataContext;
 
