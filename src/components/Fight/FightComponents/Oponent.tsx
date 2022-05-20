@@ -21,7 +21,7 @@ export const Oponent: FC<Props> = ({ oponentHP, setAttack }) => {
   const moves = [
     {
       name: 'Cut',
-      power: 30,
+      power: 40,
     },
     {
       name: 'Tackle',
