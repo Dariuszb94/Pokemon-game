@@ -76,7 +76,7 @@ export const YourFighter: FC<Props> = ({
       <MovePool>
         {movesToUse
           .filter(({ power }) => power)
-          .slice(0, 4)
+          .slice(0, 3)
           .map(({ name, power }) => (
             <Move
               onClick={() =>
