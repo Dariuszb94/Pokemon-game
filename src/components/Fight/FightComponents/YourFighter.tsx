@@ -87,7 +87,7 @@ export const YourFighter: FC<Props> = ({
               }
             >
               <MoveName>{name}</MoveName>
-              <span>({power})</span>
+              <div>({power})</div>
             </Move>
           ))}
       </MovePool>
