@@ -6,7 +6,7 @@ import { YourFighter } from './FightComponents/YourFighter';
 const Fight = () => {
   const pokemonDataContext = useContext(PokemonDataContext);
   const [yourFighterHP, setYourFighterHP] = useState(100);
-  const [oponentHP, setOponentHP] = useState(200);
+  const [oponentHP, setOponentHP] = useState(100);
 
   const [attack, setAttack] = useState({ power: 0, attacker: '' });
   useEffect(() => {
