@@ -29,6 +29,7 @@ const Fight = () => {
 
   return (
     <div>
+      <h1>Fight</h1>
       <YourFighter
         name={pokemonData.name}
         sprite={pokemonData.sprites.front_default}
