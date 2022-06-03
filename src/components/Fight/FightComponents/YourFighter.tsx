@@ -70,6 +70,7 @@ export const YourFighter: FC<Props> = ({
   }, [moves, movesToUse]);
   return (
     <YourFighterBox>
+      {error && error}
       <PokemonName>{name}</PokemonName>
       HP: {yourFighterHP}
       <PokemonSprite src={sprite} alt={name} width={200} height={200} />
