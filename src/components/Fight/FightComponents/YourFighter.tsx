@@ -72,7 +72,7 @@ export const YourFighter: FC<Props> = ({
     <YourFighterBox>
       <PokemonName>{name}</PokemonName>
       HP: {yourFighterHP}
-      <PokemonSprite src={sprite} alt={name} width={220} height={220} />
+      <PokemonSprite src={sprite} alt={name} width={200} height={220} />
       <MovePool>
         {movesToUse
           .filter(({ power }) => power)
