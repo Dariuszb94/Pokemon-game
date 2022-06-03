@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ChoosePokemon = styled.div`
   display: flex;
-  height: calc(100% - 140px);
+  height: calc(100% - 120px);
   > section {
     flex: 1;
     display: flex;
