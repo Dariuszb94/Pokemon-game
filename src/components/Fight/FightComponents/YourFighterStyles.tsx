@@ -20,7 +20,7 @@ export const Move = styled.button`
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.35);
   padding: 12px;
-  border-radius: 6px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   outline: none;
