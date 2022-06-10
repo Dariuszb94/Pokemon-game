@@ -21,7 +21,7 @@ export const Header = styled.h1`
 export const Button = styled.button`
   outline: none;
   border: none;
-  padding: 16px 34px;
+  padding: 16px 32px;
   font-size: 32px;
   font-weight: bold;
   cursor: pointer;
