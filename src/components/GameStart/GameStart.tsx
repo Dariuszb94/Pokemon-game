@@ -16,7 +16,7 @@ const GameStart: FC<Props> = ({ setStart }) => {
 
   return (
     <ChoosePokemonWrapper>
-      <Header>Choose your fighter!</Header>
+      <Header>Choose your fighter</Header>
       <ChoosePokemon>
         <PokemonsList setPokemonUrl={setPokemonUrl} />
         <ChosenPokemon pokemonUrl={pokemonUrl} />
