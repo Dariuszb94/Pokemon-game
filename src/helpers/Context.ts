@@ -1,4 +1,5 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
+
 export const defaultPokemonData = {
   name: 'bulbasaur',
   moves: [
