@@ -84,12 +84,14 @@ export const defaultPokemonData = {
     },
   ],
 };
+
 export type TMove = {
   move: {
     name: string;
     url: string;
   };
 };
+
 export type TPokemonData = {
   name: string;
   sprites: {
@@ -97,10 +99,12 @@ export type TPokemonData = {
   };
   moves: TMove[];
 };
+
 export type TPokemonDataContext = {
   pokemonData: TPokemonData;
   setPokemonData: Dispatch<SetStateAction<TPokemonData>>;
 };
+
 export const PokemonDataContext = createContext<TPokemonDataContext | null>(
   null
 );
