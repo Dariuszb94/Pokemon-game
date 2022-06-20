@@ -76,7 +76,7 @@ export const defaultPokemonData = {
       },
     },
     {
-      base_stat: 45,
+      base_stat: 40,
       effort: 0,
       stat: {
         name: 'speed',
