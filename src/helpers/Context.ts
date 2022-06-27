@@ -36,7 +36,7 @@ export const defaultPokemonData = {
   },
   stats: [
     {
-      base_stat: 60,
+      base_stat: 70,
       effort: 0,
       stat: {
         name: 'hp',
