@@ -11,7 +11,7 @@ export const ChoosePokemon = styled.div`
   }
 `;
 export const ChoosePokemonWrapper = styled.div`
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
 `;
