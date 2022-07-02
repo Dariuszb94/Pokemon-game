@@ -52,7 +52,7 @@ export const defaultPokemonData = {
       },
     },
     {
-      base_stat: 49,
+      base_stat: 50,
       effort: 0,
       stat: {
         name: 'defense',
