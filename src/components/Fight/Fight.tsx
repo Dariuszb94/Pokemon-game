@@ -29,7 +29,7 @@ const Fight = () => {
 
   return (
     <section>
-      <h1>Fight</h1>
+      <h2>Fight</h2>
       <YourFighter
         name={pokemonData.name}
         sprite={pokemonData.sprites.front_default}
