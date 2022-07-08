@@ -28,7 +28,7 @@ const Fight = () => {
   const { pokemonData } = pokemonDataContext;
 
   return (
-    <div>
+    <section>
       <h1>Fight</h1>
       <YourFighter
         name={pokemonData.name}
@@ -44,7 +44,7 @@ const Fight = () => {
         oponentHP={oponentHP}
         setAttack={setAttack}
       />
-    </div>
+    </section>
   );
 };
 
