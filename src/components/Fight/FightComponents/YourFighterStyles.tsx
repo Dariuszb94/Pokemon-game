@@ -14,7 +14,7 @@ export const MoveBox = styled.div`
 export const MovePool = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 14px;
+  grid-gap: 16px;
 `;
 export const Move = styled.button`
   box-sizing: border-box;
